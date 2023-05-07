@@ -95,7 +95,7 @@ export default {
       breadcrumb: [
         {
           text: 'Home',
-          href: '/'
+          to: '/'
         },
         {
           text: 'Store management'

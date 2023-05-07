@@ -4,7 +4,6 @@ import store from "../store";
 Vue.use(Router)
 
 const router = new Router({
-  mode: 'history',
   routes: [
     {
       path: '/',
@@ -61,7 +60,7 @@ router.beforeResolve((to, from, next) => {
     // if not, redirect to login page.
     if (isLogged) {
       next({
-        path: '/',
+        path: '/home',
         query: { redirect: to.fullPath }
       })
     } else {

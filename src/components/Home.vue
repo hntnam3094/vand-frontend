@@ -2,20 +2,20 @@
   <div id="home" class="container">
     <div class="row">
       <div class="col-6">
-        <a href="/store">
+        <router-link to="/store">
           <i class="bi bi-shop"></i>
           <div class="text-home">
             STORE
           </div>
-        </a>
+        </router-link>
       </div>
       <div class="col-6">
-        <a href="/product">
+        <router-link to="/product">
           <i class="bi bi-box-seam-fill"></i>
           <div class="text-home">
             PRODUCT
           </div>
-        </a>
+        </router-link>
       </div>
     </div>
   </div>
