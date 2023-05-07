@@ -19,7 +19,7 @@ const router = new Router({
       name: 'Login',
       component: () => import('../components/Login'),
       meta: {
-        auth: false
+        login: true
       }
     },
     {
@@ -55,6 +55,21 @@ const router = new Router({
 router.beforeResolve((to, from, next) => {
   store.dispatch('initBeforRouter')
   let isLogged = store.state.storeIsLogged
+
+  if (to.matched.some(record => record.meta.login)) {
+    // this route requires auth, check if logged in
+    // if not, redirect to login page.
+    if (isLogged) {
+      next({
+        path: '/',
+        query: { redirect: to.fullPath }
+      })
+    } else {
+      next()
+    }
+  } else {
+    next() // make sure to always call next()!
+  }
 
   if (to.matched.some(record => record.meta.auth)) {
     // this route requires auth, check if logged in

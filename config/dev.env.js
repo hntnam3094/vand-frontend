@@ -4,6 +4,6 @@ const prodEnv = require('./prod.env')
 
 module.exports = merge(prodEnv, {
   NODE_ENV: '"development"',
-  BASE_URL: '"http://dev.vand.com/"',
-  BASE_URL_API: '"http://dev.vand.com/api/"'
+  BASE_URL: '"https://vand-backend-production.up.railway.app/"',
+  BASE_URL_API: '"https://vand-backend-production.up.railway.app/api/"'
 })
